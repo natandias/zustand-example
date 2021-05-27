@@ -13,7 +13,7 @@ import {
 
 export default function Routes() {
   return (
-    <Router>
+    <Router basename={'/zustand-example'}>
       <MainContainer>
         <Switch>
           <Route path="/form" render={(props) => <UsersForm {...props} />} />
