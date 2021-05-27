@@ -1,0 +1,17 @@
+.userForm {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin: 3em auto;
+}
+
+.userForm input {
+  padding: 1em;
+}
+
+.userForm button.submitBtn {
+  padding: 1em;
+  cursor: pointer;
+}

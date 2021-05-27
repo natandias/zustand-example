@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useUserStore } from "../store";
+import { useUserStore } from "../../store";
 
 import "./styles.css";
 

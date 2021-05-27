@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
-import { useUserStore } from '../store';
+import { useUserStore } from '../../store';
+
+import './styles.css';
 
 function UsersForm(props) {
   const [name, setName] = useState();
@@ -23,20 +25,11 @@ function UsersForm(props) {
     <>
       <h2>Cadastro de Usuários</h2>
 
-      <form style={{
-        display: 'flex', 
-        gap: '1em',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        width: '50%',
-        margin: '3em auto'
-      }}
-      onSubmit={createUser}
+      <form 
+        className="userForm"
+        onSubmit={createUser}
       >
         <input
-          style={{
-            padding: '1em', 
-          }}
           type="text"
           placeholder="Nome"
           value={name}
@@ -44,19 +37,13 @@ function UsersForm(props) {
         />
 
         <input
-          style={{
-            padding: '1em',
-          }}
           type="text"
           placeholder="Telefone"
           value={phone}
           onChange={event => setPhone(event.target.value)}
         />
 
-        <button type="submit" style={{
-          padding: '1em',
-          cursor: 'pointer'  
-        }}>
+        <button type="submit" className="submitBtn">
           Cadastrar
         </button>
       </form>
