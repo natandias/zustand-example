@@ -1,0 +1,11 @@
+.sidebarContainer {
+  background: #bfbfbf;
+  padding: 2em;
+}
+
+.menus {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
