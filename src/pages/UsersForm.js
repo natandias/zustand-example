@@ -6,7 +6,7 @@ function UsersForm(props) {
   const [name, setName] = useState();
   const [phone, setPhone] = useState();
   
-  const addUserAction = useUserStore(state => state.addUser);
+  const addUserAction = useUserStore(store => store.actions.addUser);
 
   const createUser = (event) => {
     event.preventDefault();

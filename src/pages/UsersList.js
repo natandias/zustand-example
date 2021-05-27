@@ -5,8 +5,8 @@ import { useUserStore } from "../store";
 import "./styles.css";
 
 function UsersList() {
-  const users = useUserStore(state => state.users);
-  const deleteUserAction = useUserStore(state => state.deleteUser);
+  const users = useUserStore(store => store.state.users);
+  const deleteUserAction = useUserStore(store => store.actions.deleteUser);
 
   const deleteUser = id => {
     deleteUserAction(id);
