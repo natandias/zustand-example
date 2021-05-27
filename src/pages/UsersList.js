@@ -1,7 +1,43 @@
-import React from 'react';
+import React from "react";
+
+import { useUserStore } from "../store";
+
+import "./styles.css";
 
 function UsersList() {
-  return <h2>UserList</h2>;
+  const users = useUserStore(state => state.users);
+  const deleteUserAction = useUserStore(state => state.deleteUser);
+
+  const deleteUser = id => {
+    deleteUserAction(id);
+  };
+
+  return (
+    <>
+      <h2>Listagem de Usuários</h2>
+
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Telefone</th>
+          <th>Ações</th>
+        </tr>
+        {users.map(user => (
+          <tr>
+            <td>{user.id}</td>
+            <td>{user.name}</td>
+            <td>{user.phone}</td>
+            <td>
+              <button onClick={() => deleteUser(user.id)}>
+                Deletar usuário
+              </button>
+            </td>
+          </tr>
+        ))}
+      </table>
+    </>
+  );
 }
 
 export default UsersList;

@@ -1,9 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import './styles.css';
 
 function Sidebar() {
+  const selectedRoute = useLocation().pathname;
+  console.log("selectedRoute", selectedRoute);
+
   return (
     <div className="sidebarContainer">
       <header className="title">
@@ -11,8 +14,8 @@ function Sidebar() {
       </header>
       
       <main className="menus">
-        <Link to="/">Listagem</Link>
-        <Link to="/form">Cadastro</Link>
+        <Link to="/" className={selectedRoute === '/' ? 'selectedMenu' : ''}>Listagem</Link>
+        <Link to="/form" className={selectedRoute === '/form' ? 'selectedMenu' : ''}>Cadastro</Link>
       </main>
       
     </div>

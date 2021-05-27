@@ -8,7 +8,9 @@ function MainContainer(props) {
   return(
     <div className="mainContainer">
       <Sidebar />
-      {props.children}
+      <div className="pageContent">
+        {props.children}
+      </div>
     </div>
   )
 }

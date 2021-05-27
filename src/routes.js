@@ -16,14 +16,10 @@ export default function Routes() {
     <Router>
       <MainContainer>
         <Switch>
-          <Route path="/form">
-            <UsersForm />
-          </Route>
-          <Route path="/" exact>
-            <UsersList />
-          </Route>
+          <Route path="/form" render={(props) => <UsersForm {...props} />} />
+          <Route path="/" exact render={(props) => <UsersList {...props} />} />
         </Switch>
-      </MainContainer>
+        </MainContainer>
     </Router>
   );
 }
